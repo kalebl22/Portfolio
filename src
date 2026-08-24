@@ -1,0 +1,3 @@
+├── main.jsx          # Entry point
+├── App.jsx           # Main component
+└── index.css         # Global styles
