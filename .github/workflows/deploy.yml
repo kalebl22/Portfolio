@@ -32,7 +32,7 @@ jobs:
       
       - name: Build
         working-directory: ./client
-        run: npm run build
+        run: npx vite build
         env:
           CI: false
       
