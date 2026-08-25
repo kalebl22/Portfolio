@@ -48,15 +48,88 @@ body {
   color: white;
 }
 
-/* Tab Content */
-.tab-content {
+/* Tab Content Container */
+.tab-content-container {
   background: white;
   padding: 30px;
   width: 70%;
   margin: auto;
-  border-radius: 12px;
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 10px 40px -10px rgba(0, 0, 0, 0.15);
   scroll-margin-top: 80px;
+}
+
+.tab-content-container .section-wrapper {
+  padding-bottom: 30px;
+}
+
+.tab-content-container .section-wrapper:last-child {
+  padding-bottom: 0;
+}
+
+/* Rounded corners on first and last sections only */
+.tab-content-container > :first-child .section-wrapper {
+  border-radius: 24px 24px 0 0 !important;
+  margin-top: 0 !important;
+  padding-top: 30px !important;
+}
+
+.tab-content-container > :last-child .section-wrapper {
+  border-radius: 0 0 24px 24px !important;
+  margin-bottom: 0 !important;
+  padding-bottom: 30px !important;
+}
+
+/* Middle sections have no rounded corners */
+.tab-content-container > div:not(:first-child):not(:last-child) .section-wrapper {
+  margin-top: -15px;
+  padding-top: 15px;
+  border-radius: 0 !important;
+  padding-bottom: 30px !important;
+}
+
+@media (prefers-color-scheme: dark) {
+  .tab-content-container > :first-child .section-wrapper {
+    background: #16213e !important;
+  }
+
+  .tab-content-container > :last-child .section-wrapper {
+    background: #16213e !important;
+  }
+}
+
+.tab-content h2 {
+  margin-bottom: 25px;
+  padding-bottom: 15px;
+  border-bottom: 3px solid #6366f1;
+  display: inline-block;
+}
+
+.tab-content p, .tab-content li {
+  margin-bottom: 18px;
+}
+
+.tab-content ul {
+  list-style: none;
+  padding: 0;
+}
+
+.tab-content li {
+  padding: 20px 0;
+  border-bottom: 2px solid #e5e7eb;
+}
+
+.tab-content li:last-child {
+  border-bottom: none;
+}
+
+.contact-link {
+  color: #6366f1;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.contact-link:hover {
+  text-decoration: underline;
 }
 
 /* Typography */
@@ -99,12 +172,45 @@ li {
     color: #1a1a2e;
   }
 
-  .tab-content {
+  .tab-content-container {
     background: #16213e;
     box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.5);
   }
 
+  .tab-content h2 {
+    border-bottom-color: #8b8bff;
+  }
+
+  .tab-content p, .tab-content li {
+    color: #eee;
+  }
+
+  .tab-content ul {
+    color: #eee;
+  }
+
+  .tab-content li {
+    border-bottom-color: #3a3a5e;
+  }
+
+  .contact-link {
+    color: #8b8bff;
+  }
+
+  .contact-link:hover {
+    text-decoration: underline;
+  }
+
+  h2 {
+    color: #eee;
+  }
+
+  p {
+    color: #eee;
+  }
+
   li {
     border-bottom-color: #3a3a5e;
+    color: #eee;
   }
 }
