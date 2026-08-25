@@ -29,16 +29,13 @@ jobs:
         working-directory: ./client
         run: npm run build
       
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+      
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
           path: ./client/dist
-          retention-days: 10
-      
-      - name: Upload config
-        uses: actions/upload-pages-artifact@v3
-        with:
-          path: .
           retention-days: 10
       
       - name: Deploy to GitHub Pages
