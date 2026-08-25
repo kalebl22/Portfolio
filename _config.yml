@@ -1,0 +1,3 @@
+baseurl: /Portfolio/
+plugins:
+  - jekyll-redirect-from
