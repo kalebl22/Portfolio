@@ -26,17 +26,7 @@ jobs:
           node-version: '20.18'
           cache: 'npm'
       
-      - name: Install dependencies
-        working-directory: ./client
-        run: |
-          npm install --legacy-peer-deps
-          echo "Dependencies installed successfully"
-      
-      - name: Build
-        working-directory: ./client
-        run: |
-          npm run build || exit 1
-          ls -la dist/
+
         env:
           CI: false
       
