@@ -26,9 +26,8 @@ jobs:
           node-version: '20'
       
       - name: Install dependencies
-        run: |
-          cd client
-          npm ci --legacy-peer-deps
+        working-directory: ./client
+        run: npm install --legacy-peer-deps
       
       - name: Build
         working-directory: ./client
