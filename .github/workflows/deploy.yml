@@ -34,7 +34,9 @@ jobs:
       
       - name: Build
         working-directory: ./client
-        run: npm run build
+        run: |
+          npm run build || exit 1
+          ls -la dist/
         env:
           CI: false
       
