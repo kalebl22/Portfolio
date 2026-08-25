@@ -28,11 +28,13 @@ jobs:
       
       - name: Install dependencies
         working-directory: ./client
-        run: npm install --legacy-peer-deps
+        run: |
+          npm install --legacy-peer-deps
+          ls -la node_modules/vite
       
       - name: Build
         working-directory: ./client
-        run: npx vite build
+        run: npm run build
         env:
           CI: false
       
